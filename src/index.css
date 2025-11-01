@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 30 14% 98%;
+    --foreground: 0 0% 7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+
+    --primary: 0 0% 7%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 30 14% 96%;
+    --secondary-foreground: 0 0% 7%;
+
+    --muted: 30 14% 96%;
+    --muted-foreground: 0 0% 42%;
+
+    --accent: 30 45% 64%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 10% 91%;
+    --input: 30 10% 91%;
+    --ring: 0 0% 7%;
+
+    --radius: 0.25rem;
+
+    /* Fashion-specific tokens */
+    --line: 30 10% 91%;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-lift: 0 4px 16px -4px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark {
+    --background: 216 12% 7%;
+    --foreground: 0 0% 96%;
+
+    --card: 216 12% 7%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 216 12% 7%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 0 0% 96%;
+    --primary-foreground: 0 0% 7%;
+
+    --secondary: 240 4% 12%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 240 4% 12%;
+    --muted-foreground: 0 0% 64%;
+
+    --accent: 30 45% 64%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 12%;
+    --input: 240 4% 12%;
+    --ring: 0 0% 83%;
+
+    --line: 240 4% 12%;
+    --shadow-lift: 0 4px 16px -4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .blur-header {
+    @apply backdrop-blur-md bg-background/80 border-b border-border;
+  }
+}
